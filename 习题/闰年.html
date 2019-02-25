@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <!-- <input id="age" type="text" placeholder="请输入年龄"> -->
+    
+<script>
+
+    var today = new Date();   //获取当天日期
+    var year = today.getFullYear();   //获取当天年份
+    if((((year%4==0)&&(year%100!=0)))||(year%400==0)){
+        document.write('<br>'+"yeah!")
+    }
+    else{
+        document.write('<br>'+"oh!")
+    }
+    document.write('<br>');
+
+
+
+
+
+</script>
+
+</body>
+</html>
