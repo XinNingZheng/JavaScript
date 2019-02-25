@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <!-- <input id="age" type="text" placeholder="请输入年龄"> -->
+    
+<script>
+    var x = Math.random();
+    var y = Math.random();
+    document.write(x>y?"x:"+x:"y:"+y);
+
+
+
+    var today = new Date();   //获取当天日期
+    var year = today.getFullYear();   //获取当天年份
+    if((((year%4==0)&&(year%100!=0)))||(year%400==0)){
+        document.write('<br>'+"yeah!")
+    }
+    else{
+        document.write('<br>'+"oh!")
+    }
+    document.write('<br>');
+
+
+
+    var  i; 
+    while(i=0) {
+        i--;
+        document.write("!!!!!!!")
+    }
+    document.write('<br>');
+
+
+
+    var age = prompt("你多大了？","")
+    if(age<14&&age>0){
+        alert("你还是个孩子");
+    }
+    else if(age>=14&&age<24){
+        alert("你是个少年");
+    }
+    else if(age>=24&&age<40){
+        alert("你是个青年人");
+    }
+
+    else if(age>=40&&age<60){
+        alert("你是个中年人");
+    }
+    else if(age>=60&&age<100){
+        alert("你是个老东西");
+    }
+    else{
+        alert("wrong");
+    }
+    
+    
+    var day = prompt("请输入0-6","");
+    switch (day){
+        case '0':
+            alert("Sunday");
+            break;
+        case '1':
+            alert("Monday");
+            break;
+        case '2':
+            alert("Tuesday");
+            break;
+        case '3':
+            alert("Wednesday");
+            break;
+        case '4':
+            alert("Thursday");
+            break;
+        case '5':
+            alert("Friday");
+            break;
+        case '6':
+            alert("Saturday");
+            break;
+    }
+
+
+    function jie(){
+        var result = 1;
+        for(var i = 1; i < 10; i++){
+            result *= i;
+        }
+        document.write(result);
+    }
+    jie();
+    document.write('<br>');
+
+    
+    function cheng(){
+        var sum = 0;
+        var result = 1;
+        for(var i = 1; i < 10; i++){
+            result *= i;
+            sum += result;
+         }
+            document.write(sum);
+    }
+    cheng();
+    document.write('<br>');
+
+
+    for(var i = 1; i < )
+
+    
+
+</script>
+
+</body>
+</html>
