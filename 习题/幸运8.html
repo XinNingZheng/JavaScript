@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    var rate=0;		//赢率 
+    var sum=0;	//总次数
+    var win=0;			//赢的次数
+    var last_digits;	//上次数字串
+    var last_win;	//上次是否赢?
+    function Play(){
+        var i,digit;
+        sum++;
+        last_digits="";
+        last_win=false;	
+        for(i=0;i<3;i++){
+            digit = Math.floor(Math.random()*9)+1;
+            last_digits += digit;
+            if (digit==8) 
+                last_win=true;
+        }
+        if (last_win) 
+            win++;
+        rate = Math.floor(100*(win/sum));
+    }
+    while(true){
+        Play();
+        if (!confirm(last_digits +"\n" + (last_win?"赢":"输") + "\n胜率"+rate+"%,继续吗?")) break;
+    }
+    
+</script>
+</body>
+</html>
