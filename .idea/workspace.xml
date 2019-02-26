@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4145a5d3-528f-480e-acbc-959ec51c0122" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/习题.html" beforeDir="false" afterPath="$PROJECT_DIR$/习题.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/基础语法.html" beforeDir="false" afterPath="$PROJECT_DIR$/基础语法.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -52,8 +51,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/基础语法.html">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="234">
               <caret line="53" column="34" selection-start-line="53" selection-start-column="34" selection-end-line="53" selection-end-column="34" />
+=======
+            <state relative-caret-position="170">
+              <caret line="51" column="22" selection-start-line="51" selection-start-column="22" selection-end-line="51" selection-end-column="22" />
+>>>>>>> 200329d6977f04fb728511e33b8db06eccd65148
             </state>
           </provider>
         </entry>
@@ -83,7 +87,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+<<<<<<< HEAD
   <component name="ProjectFrameBounds" extendedState="6">
+=======
+  <component name="ProjectFrameBounds" extendedState="7">
+>>>>>>> 200329d6977f04fb728511e33b8db06eccd65148
     <option name="x" value="1008" />
     <option name="y" value="16" />
     <option name="width" value="863" />
@@ -139,7 +147,11 @@
       <option name="presentableId" value="Default" />
       <updated>1550885627831</updated>
       <workItem from="1550885630685" duration="3583000" />
+<<<<<<< HEAD
       <workItem from="1550909558992" duration="1181000" />
+=======
+      <workItem from="1550909558992" duration="599000" />
+>>>>>>> 200329d6977f04fb728511e33b8db06eccd65148
     </task>
     <task id="LOCAL-00001" summary="js">
       <created>1550902119787</created>
@@ -152,6 +164,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="4764000" />
   </component>
   <component name="ToolWindowManager">
@@ -159,6 +172,15 @@
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1085353" />
+=======
+    <option name="totallyTimeSpent" value="4182000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1008" y="16" width="863" height="994" extended-state="7" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24969697" />
+>>>>>>> 200329d6977f04fb728511e33b8db06eccd65148
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -190,8 +212,13 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/基础语法.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="234">
           <caret line="53" column="34" selection-start-line="53" selection-start-column="34" selection-end-line="53" selection-end-column="34" />
+=======
+        <state relative-caret-position="170">
+          <caret line="51" column="22" selection-start-line="51" selection-start-column="22" selection-end-line="51" selection-end-column="22" />
+>>>>>>> 200329d6977f04fb728511e33b8db06eccd65148
         </state>
       </provider>
     </entry>
