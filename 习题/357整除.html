@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    var sum = 0;
+    function chu(x){
+        if(x % 3 == 0 && x % 5 == 0 && x % 7 == 0){
+            sum++;
+            return x;
+        }
+    }
+    for(var i = 1; i < 1000; i++){
+        if(chu(i)){
+            document.write(i + ' ');
+            if(sum % 6 == 0){
+                document.write('<br>');
+            }
+        }
+    }
+
+</script>
+</body>
+</html>
