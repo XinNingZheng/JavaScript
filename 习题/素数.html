@@ -35,6 +35,22 @@
         }
     }
 
+
+function prime(n){
+    var flag = false;//标志位 false表示不是素数
+    for(var i = 2; i < n; i++){
+        if(n % i == 0){
+            flag = false;
+            break;
+        }
+        else{
+            flag = true;
+        }
+    }
+    return flag;
+}
+
+
 </script>
 </body>
 </html>
