@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <a href="history.html">history</a>
+<script>
+    // document.write('hello world');
+    // var a = 5;
+    // window.scroll(0,0);
+    // var result = confirm('请输入：');
+    // console.log(result);
+    
+    var i = 0;
+        var timer = setInterval(function(){
+            console.log(i++);
+            if(i > 5){
+                clearInterval(timer);
+            }
+        }, 1000);
+
+    // var i = 0;
+    // setTimeout(function(){
+    //     console.log(i++);
+    // },1000)
+    // clearTimeout(timer);//断掉
+    // console.log(timer);//返回值是number型
+
+
+    setTimeout(function(){
+        console.log(1);
+    },0)
+    console.log(2);
+    console.log(3);
+    //event loop 
+    // js单线程 一次只能处理一个任务  异步操作
+    // 发现延迟的时候跳过他
+
+
+    /* if (navigator.userAgent.indexOf('iPhone') == -1) {
+            location.href = 'https://www.taobao.com';
+        } else {
+            location.href = 'https://h5.m.taobao.com'
+        } */
+</script>
+</body>
+</html>

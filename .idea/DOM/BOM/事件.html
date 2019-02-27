@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        #menu{
+            display: none;
+            
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">随机数</button>
+    <input type="text" >
+    学校：
+    <select id="school">
+            <option>黑大</option>
+            <option>理工</option>
+            <option>林大</option>
+    </select>
+    <ul id="menu">
+            <li>菜单1</li>
+            <li>菜单2</li>
+            <li>菜单3</li>
+            <li>菜单4</li>
+            <li>菜单5</li>
+    </ul>
+
+<script>
+    var oBtn = document.getElementById('btn');
+    oBtn.onclick = function() {  
+        console.log(Math.random());
+    };
+        
+</script>
+</body>
+</html>
