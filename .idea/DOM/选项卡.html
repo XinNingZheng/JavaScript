@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        #container{
+            width: 300px;
+            height: 200px;
+        }
+        ul{
+            /* height:50px;     */
+            overflow: hidden;
+        }
+        li{
+            list-style: none;
+            /* display: inline-block; */
+            float: left;
+            width:95px;
+            height: 30px;
+            margin-right:4px;
+            background: #fffc94;
+            text-align: center;
+            line-height: 30px;
+        }
+        li.active{
+            background: #ffdf27;
+
+        }
+        #content div{
+            width: 293px;
+            height: 170px;
+            background: #ffdf27;
+            display: none;
+        }
+        #content .selected{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <!-- 点击按钮 -->
+        <ul>
+            <li class="active" id="one">1111</li>
+            <li id="two">2222</li>
+            <li id="three">3333</li>
+        </ul>
+        <!-- 内容区域 -->
+        <div id="content">
+            <div class="selected" id="a">1111的内容</div>
+            <div id="b">2222的内容</div>
+            <div id="c">3333的内容</div>
+        </div>
+    </div>
+<script>
+    // var one = document.getElementById('one');
+    // var two = document.getElementById('two');
+    // var three = document.getElementById('three');
+    // var a = document.getElementById('a');
+    // var b = document.getElementById('b');
+    // var c = document.getElementById('c');
+    // one.onclick = function(){
+    //     a.style.display('block');
+    // }
+    // two.onclick = function(){
+    //     b.style.display('block');
+    // }
+    // three.onclick = function(){
+    //     c.style.display('block');
+    // }
+    var aLi = document.getElementsByTagName('li');
+    var oContent = document.getElementById('content');
+    var aDiv = oContent.getElementsByTagName('div');
+    
+    for(var i = 0; i < aLi.length; i++){//页面初始 循环绑定事件  i = 3;
+        aLi[i].index = i;//所以li添加一个 自定义属性index 
+        aLi[i].onclick = function(){
+            //this 对当前对象的引用 
+            // 所有li的active清掉
+            for(var j=0; j<aLi.length; j++){
+                aLi[j].className = "";
+                aDiv[j].className = "";
+            }
+            // 自己加上active
+            this.className = "active";
+            // 讲aDiv数组中索引是 this.index 显示
+            aDiv[this.index].className = "selected";
+        }
+    }
+</script>
+</body>
+</html>

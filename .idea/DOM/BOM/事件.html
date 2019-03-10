@@ -5,37 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <style>
-        *{
-            padding:0;
-            margin:0;
-        }
-        #menu{
-            display: none;
-            
-        }
-    </style>
 </head>
 <body>
     <button id="btn">随机数</button>
-    <input type="text" >
+    <input type="text" id="username">
     学校：
     <select id="school">
             <option>黑大</option>
             <option>理工</option>
             <option>林大</option>
     </select>
-    <ul id="menu">
-            <li>菜单1</li>
-            <li>菜单2</li>
-            <li>菜单3</li>
-            <li>菜单4</li>
-            <li>菜单5</li>
-    </ul>
-
 <script>
     var oBtn = document.getElementById('btn');
+    var oSchool = document.getElementById('school');
     oBtn.onclick = function() {  
+        console.log(Math.random());
+    };
+    var username = document.getElementById('username');
+    username.onfocus = function(){
+        console.log('获取焦点');
+    }
+    username.onblur = function(){
+        console.log('失去焦点');
+    }
+    username.onkeyup = function(e){
+        console.log(e.keyCode); // 键盘码
+    };
+
+    var oSchool = document.getElementById('school');
+    oSchool.onchange = function(){
+        console.log('onchange');
+    };
+
+    window.onresize = function(){
         console.log(Math.random());
     };
         
