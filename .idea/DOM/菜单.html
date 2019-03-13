@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #all{
+        position: relative;
+        width: 120px;
+        border: 2px solid black;
+    }
+    ul{
+        overflow: hidden;
+        display: none;
+    }
+    .menu{
+        background: #000;
+        color: white;
+        font-weight: bold;
+    }
+    </style>
+</head>
+<body>
+<div id="all">
+    <div class="menu" id="one">管理区</div>
+    <ul id="menu1">
+        <li>001</li>
+        <li>002</li>
+        <li>003</li>
+    </ul>
+    <div class="menu" id="two">交流区</div>
+    <ul id="menu2">
+        <li>001</li>
+        <li>002</li>
+        <li>003</li>
+    </ul>
+</div>
+<script>
+    var one = document.getElementById('one');
+    var two = document.getElementById('two');
+    var menu1 = document.getElementById('menu1');
+    var menu2 = document.getElementById('menu2');
+
+    one.onclick = function(){ 
+        if(menu1.style.display == '' || menu1.style.display == 'none'){
+            menu1.style.display = 'block'; 
+        }
+       else if(menu1.style.display == 'block'){
+            menu1.style.display = 'none'; 
+        }
+    }
+    two.onclick = function(){
+        if(menu2.style.display == '' || menu2.style.display == 'none'){
+            menu2.style.display = 'block'; 
+        }
+       else if(menu2.style.display == 'block'){
+            menu2.style.display = 'none'; 
+        }
+    }
+</script>
+</body>
+</html>
