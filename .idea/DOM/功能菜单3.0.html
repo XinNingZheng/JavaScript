@@ -44,18 +44,22 @@
 <script>
     var aH2 = document.getElementsByTagName('h2');
     var aUl = document.getElementsByTagName('ul');
+
+    //var flag = false; false代表隐藏 true代表显示
     for(var i = 0; i < aH2.length; i++){
         //建立索引
         aH2[i].index = i;
+        aH2[i].flag = false;
         aH2[i].onclick = function(){
             var oUl = aUl[this.index];
-            //如果 初始取到display == ""  或者是 隐藏的时候  =>显示
-            if(oUl.style.display == "" || oUl.style.display == "none"){
-                    // 写在内联样式上 
-                    oUl.style.display = "block";
-            }else if(oUl.style.display == "block"){
+            //如果 this.flag为true 代表当前是显示
+            if(this.flag){
+                //隐藏 
                 oUl.style.display = "none";
+            }else{
+                oUl.style.display = "block";
             }
+            this.flag = !this.flag;
         }
     }
 
