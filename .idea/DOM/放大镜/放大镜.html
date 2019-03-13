@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #small{
+            position: relative;
+            height: 400px;
+            width: 400px;      
+            background:url(imgs/1.jpg);
+            float: left;
+        }
+        #div1{
+            position: absolute;
+            height: 200px;
+            width: 200px;
+            display:none;
+            background: rgba(255, 255, 255, 0.5);
+        }
+        #big{
+            height: 400px;
+            width: 400px;
+            position: relative;
+            overflow: hidden;
+            float: left;
+            display: none;
+        }
+        #img{
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div id="small">
+        <div id="div1"></div>
+    </div>
+    <div id="big">
+        <img src="imgs/2.jpg" id="img">
+    </div>
+<script>
+    var oDiv = document.getElementById('div1');
+    var oSmall = document.getElementById('small');
+    var oBig = document.getElementById('big');
+    var oImg = document.getElementById('img');
+    //划入
+    oSmall.onmouseover = function(){
+        oDiv.style.display = 'block';
+        oBig.style.display = 'block';
+    
+        oSmall.onmousemove = function(e){
+            var x = e.clientX - oDiv.offsetWidth/2
+            var y = e.clientY - oDiv.offsetHeight/2
+            var maxX = oSmall.offsetWidth - oDiv.offsetWidth;
+            var maxY = oSmall.offsetHeight - oDiv.offsetHeight;
+            
+            if(x<0){
+                x = 0;
+            }
+            if(y<0){
+                y = 0;
+            }
+            if(x > maxX){
+                x = maxX;
+            }
+            if(y > maxY){
+                y = maxY;
+            }
+            oDiv.style.left = x + 'px';
+            oDiv.style.top = y + 'px';
+    
+            // 1 div1 能走的最大距离  oSmall - oDiv
+            var smallMax = oSmall.offsetWidth - oDiv.offsetWidth;
+            var smallMaxY = oSmall.offsetHeight - oDiv.offsetHeight;
+
+            // 2 大图 能走的最大距离  大图的宽度 - oImg 
+            var bigMax = oImg.offsetWidth - oBig.offsetWidth;
+            var bigMaxY = oImg.offsetHeight - oBig.offsetHeight;
+
+            // 3求出 div1 走的比例 
+            var percentX = oDiv.offsetLeft/smallMax;
+            var percentY = oDiv.offsetTop/smallMaxY;
+                
+            // 4.求大图应该走的距离
+            oImg.style.left = - bigMax * percentX +'px';
+            oImg.style.top = - bigMaxY * percentY +'px';
+        }
+    }
+    
+    oSmall.onmouseout = function(){
+            oDiv.style.display = "none";
+            oBig.style.display = "none";
+        }
+
+        
+</script>
+</body>
+</html>
