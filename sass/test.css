@@ -1,0 +1,60 @@
+body {
+  height: 100px;
+  width: 100px;
+}
+
+body #div1 {
+  height: 200px;
+  width: 200px;
+  background: yellow;
+  padding-top: 50px;
+  padding-left: 50px;
+}
+
+body #div1 a {
+  background: #f00;
+}
+
+body #div1 a:hover {
+  color: #0dd;
+}
+
+.aa {
+  width: 0px;
+  height: 0px;
+  border: 10px solid #f0f0;
+  border-color: transparent;
+  border-top-color: #f0f;
+}
+
+.bb, .dd {
+  height: 200px;
+  width: 200px;
+  border: 5px solid #aaa;
+  background: red;
+}
+
+.cc {
+  height: 50px;
+  width: 100px;
+  border: 5px solid #aaa;
+}
+
+.gg, .h {
+  width: 100px;
+  height: 100px;
+}
+
+.h {
+  color: #333333;
+  height: 6;
+}
+
+.ii {
+  width: 700px;
+}
+
+.jj {
+  width: 500px;
+  height: 600px;
+}

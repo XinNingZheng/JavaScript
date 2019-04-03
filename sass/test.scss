@@ -1,0 +1,84 @@
+$color:pink;
+$color:#fff !default;//默认值  默认值之前可以写特殊的
+$attr:width;
+
+
+body{
+    //background: $color;
+    //color: $color;
+    height: 100px;
+    #{$attr}:100px;//#{封装复杂的属性名}
+    #div1{
+        height: 200px;
+        #{$attr}:200px;
+        background:yellow;
+        padding: {
+            top: 50px;
+            left: 50px;
+        };
+        a{
+            background: #f00;
+            &:hover{
+                color:#0dd;
+            }
+            
+        }
+    }
+}
+
+
+//封装一个三角形  mixin混合宏
+@mixin triangle{
+    width: 0px;
+    height: 0px;
+    border: 10px solid #f0f0;
+    border-color:transparent;
+    border-top-color:#f0f;
+}
+
+.aa{
+    @include triangle();
+}
+@mixin border($w:200px,$h:200px) {
+    height: $h;
+    width: $w;
+    border: 5px solid #aaa;
+}
+
+.bb{
+    @include border();
+    background: red;
+}
+.cc{
+    @include border(100px,50px);
+}
+.dd{
+    @extend .bb;
+}
+
+
+//%占位符  简单的样式占位 不能传参
+%ff{
+    width: 100px;
+    height: 100px;
+}
+.gg,.h{
+    @extend %ff;//extend继承
+}
+.h{
+    color:lighten(#000,20);
+    height: ceil(5.5);
+}
+
+@function add($a,$b){
+    @return $a + $b;
+}
+.ii{
+    width: add(300px,400px);
+}
+
+.jj{
+    width:300px+200px;
+    height: 300px * 2;
+    
+}
