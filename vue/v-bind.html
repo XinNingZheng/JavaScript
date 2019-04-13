@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .red{
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <img :src="imgUrl" alt="">
+
+        <button @click="toggle">toggle切换</button>
+        <div :class="{red:isRed}">我会换背景</div>
+    
+        <div :style="styleObj">styleObj</div>
+    
+    </div>
+
+
+
+<script src="vue.js"></script>
+
+<script>
+    new Vue({
+        el:'#app',        
+        data:{
+            imgUrl:'https://cn.vuejs.org/images/logo.png',
+            isRed:true,
+            styleObj:{
+                background:'yellow',
+                color:'purple',
+                'font-size': '30px'
+            }
+        },
+        methods:{
+            toggle(){
+                this.isRed = !this.isRed;
+            }
+        }
+    
+    
+    
+    })
+        
+</script>
+</body>
+</html>

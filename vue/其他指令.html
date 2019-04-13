@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    [v-cloak]{
+        display: none;
+    }
+    </style>
+</head>
+<body>
+    <div id="app">
+        {{msg}}
+
+
+    <!-- 编译结束再显示 -->
+    <div v-cloak>{{msg}}</div>  
+    
+    <!-- 显示原有 -->
+    <div v-pre>{{msg}}</div>  
+    
+    <!-- 只渲染一次，不会被改变 -->
+    <div v-once>{{msg}}</div>  
+    
+    </div>
+
+<script src="vue.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            msg:'hello world!'
+        }
+    })        
+</script>
+
+</body>
+</html>
