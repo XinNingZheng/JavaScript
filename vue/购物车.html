@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        background: #eee;
+    }
+    #app{
+        background: #fff;
+        width: 100%;
+        margin-top:100px;
+
+    }
+    h1{
+        width: 100px;
+        height: 50px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    .center input{
+        height: 26px;
+        width: 200px;
+        border-radius: 10px;
+        margin-top: 2px;
+        overflow: hidden;
+        font-size: 20px;
+        padding: 5px;
+    }
+    input,button:focus { outline: none; }
+    .center button{
+        height: 40px;
+        width: 80px;
+        border-radius: 10px;
+        background: #fff;
+    }
+    .center{
+        height: 40px;
+        margin: 0 auto;
+        padding-top: 20px;
+    }
+   
+    table{
+        width: 100%;
+        margin-top:50px; 
+        background: #fff;
+    }
+    th{
+        padding: 10px;
+        background: rgb(252,248,228);
+    }
+    td{
+        width:25%; 
+        text-align:center;
+        padding: 10px;
+    }
+    .red{
+        background: red;
+    }
+
+    #btn{
+        height: 30px;
+        width: 30px;
+        background: orange;
+        color: #fff;
+        font-weight: 200;
+        border:0;
+        border-radius: 5px
+    }
+
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>todolist</h2>
+        <hr />
+    
+        <center>
+            <div class="center">
+                <input type="text" class="search-val" v-model="searchVal" placeholder="请输入搜索内容">
+                <button class="search" @click.prevent="search()">搜索</button>
+                <br>
+            </div>
+            
+            <div class="center">
+                <b for="proName">商品名称：</b><input type="text" id="proName" placeholder="请输入产品名" v-model="name">
+                <b for="proPrice">商品价格：</b> <input type="text" id="proPrice" placeholder="请输入产品价格" v-model="price">
+                <button type="submit" class="add" @click="add()">增加</button>
+            </div>
+        </center>
+
+
+        <table>
+            <thead>
+                <th>选择</td>
+                <th>商品名称</td>
+                <th>商品价格</td>
+                <th>删除</td>
+            </tr>
+            <tr v-for="(product,index) in proList" @click= "change(product,index)" :class="{red:product.isRed}">
+                <td><input type="checkbox" v-model="product.isRed" :value="index"></td>
+                <td>{{product.name}}</td>
+                <td>{{product.price}}</td>
+                <td>
+                    <button id="btn" @click.stop="del(index)">X</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="del" @click="delCheck()">删除选中</button>
+                </td>
+                <td colspan="3">总价是：{{sum()}}元</td>
+            </tr>
+        </table>
+
+    </div>
+
+
+
+<script src="vue.js"></script>
+
+<script>
+    new Vue({
+        el:'#app',        
+        data:{
+            proList : [
+                {
+                    name:'裤子',
+                    price:11,
+                    isRed:false
+                },
+                {
+                    name:'衣服',
+                    price:22,
+                    isRed:false
+                },
+                {
+                    name:'电脑',
+                    price:3333,
+                    isRed:false
+                },
+                {
+                    name:'iphoneX',
+                    price:6666,
+                    isRed:false
+                }
+            ],
+            //用来显示的数组
+            showList:[
+            {
+                    name:'裤子',
+                    price:11,
+                    isRed:false
+                },
+                {
+                    name:'衣服',
+                    price:22,
+                    isRed:false
+                },
+                {
+                    name:'电脑',
+                    price:3333,
+                    isRed:false
+                },
+                {
+                    name:'iphoneX',
+                    price:6666,
+                    isRed:false
+                }    
+        
+            ],
+            name:'',
+            price:'',
+            check:[],
+            searchVal:''
+    
+        },
+        methods:{
+            change(product,idx){
+                if(product.isRed){//需要从数组移除 checkbox取消勾选
+                    this.check.splice(this.check.indexOf(idx),1);
+                }else{//当前灰色 需要push到数组  checkbox 勾选
+                    this.check.push(idx);
+                }
+                //给td添加或者移除样式
+                product.isRed = !product.isRed;
+            },
+            add(){
+                this.proList.push({
+                    name:this.name,
+                    price:this.price,
+                    isRed:false
+                });
+                //添加后清空输入框的文字
+                this.name = '';
+                this.price = '';
+            },
+            sum(){
+                var totalPrice = 0;
+                this.proList.forEach(function(pro,idx){
+                    if(pro.isRed){
+                        totalPrice += pro.price*1;
+                    }
+                });
+                return totalPrice;
+            },
+            del(index) {
+                    this.proList.splice(index, 1);
+            },
+            delCheck(){
+                //过滤出所有没有被勾选的商品
+                let newPro = this.proList.filter(function(product){
+                    return (product.isRed != true);
+                });
+                //讲所有没被勾选的商品赋值给proList 页面显示所有没被勾选的
+                this.proList = newPro;
+                //清空选中checkbox
+                this.check = [];
+            },
+            search(){
+                // this.searchVal
+                let newPro = this.proList.filter((product) => {
+                    //过滤出商品中包含关键字的
+                    return product.name.includes(this.searchVal);
+                });
+                this.proList = newPro;
+            }
+        }
+    
+    
+    
+    })
+        
+</script>
+</body>
+</html>
