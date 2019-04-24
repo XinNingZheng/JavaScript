@@ -1,7 +1,6 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="我的第一个Vue工程"/>
+   home
   </div>
 </template>
 
