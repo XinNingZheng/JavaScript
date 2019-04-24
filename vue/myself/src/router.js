@@ -6,10 +6,11 @@ import B from './views/B.vue'
 import C from './views/C.vue'
 import Test1 from './views/Test1.vue'
 import Test2 from './views/Test2.vue'
+import Error from './views/Error.vue'
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
+  mode: 'hash',
   base: process.env.BASE_URL,
   routes: [
     {
@@ -32,13 +33,29 @@ export default new Router({
       ]
     },
     {
-      path:'/b',
-      name:'b',
-      component:B
+      path:'/b/:id',
+      redirect: '/c/:id'
     },
     {
       path:'/c/:id',
       component:C
+    },
+    {
+      path:'/home',
+      redirect: '/'
+    },
+    {
+      path:'/',
+      component: Home,
+      alias:'/yyy'
+    },+
+    {
+      path:'*',
+      component:Error,
+      beforeEnter: (to, from, next) => {
+        console.log(to,from,next);
+        next();
+      }
     }
   ]
 })
