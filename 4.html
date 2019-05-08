@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .title{
+        width: 300px;
+        overflow:hidden; 
+        text-overflow:ellipsis;
+        display:-webkit-box; 
+        -webkit-box-orient:vertical;
+        -webkit-line-clamp:2;
+    }
+    ul{
+        
+        width: 294px;
+        height: 60px;
+        display: flex;
+        margin:10px 0;
+    }
+    li{
+        background: rgb(181,215,227);
+        margin-right: 8px;
+        flex: 1;
+        height: 100%;
+        list-style: none; 
+    }
+
+    .ad{
+        width: 200px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        float: left;
+    }
+    </style>
+</head>
+<body>
+    <div class="title">测试标题，最多两行，溢出隐藏，测试标题，最多两行，溢出隐藏，测试标题，最多两行，溢出隐藏，测试标题，最多两行，溢出隐藏，测试标题，最多两行，溢出隐藏，</div>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <div class="ad">广告来源：单行，，溢出截断，省略号代替，广告来源：单行，，溢出截断，省略号代替，广告来源：单行，，溢出截断，省略号代替，广告来源：单行，，溢出截断，省略号代替</div><span>广告</span>
+
+
+</body>
+</html>

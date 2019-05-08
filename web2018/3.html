@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">aaaaa</div>
+
+    <ul id="list">
+        <li>001</li>
+        <li>002</li>
+        <li>003</li>
+        <li>004</li>
+        <li>005</li>
+    </ul>
+
+<script>
+    var oDiv1 = document.getElementById('div1');
+    console.log(oDiv1);
+
+    var oList = document.getElementById('list');
+    //类数组
+    var aLi = oList.getElementsByTagName('li');
+    console.log(aLi);
+    for(var i = 0; i < aLi.length; i++){
+        console.log(aLi[i]);
+    }
+
+
+
+
+    
+
+</script>
+</body>
+</html>
