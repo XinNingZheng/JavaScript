@@ -1,46 +1,81 @@
 <template>
     <div>
-        <transition-group name="." tag="ul" class="slide-box">
-            <li class="slide-item" v-for="(img,index) in imgs" :key="index" v-show="index">
+        <transition-group name="fade" tag="ul" class="slide-box">
+            <li class="slide-item" v-for="(img,index) in imgs" :key="index" v-show="index == idx ">
                 <img :src="img"/>
-            </li>  
+            </li>
         </transition-group>
-    </div>    
+    </div>
 </template>
-
 <script>
+// [
+//                     "https://img3.doubanio.com/lpic/s24468373.jpg",
+//                     "https://img3.doubanio.com/lpic/s27102925.jpg",
+//                     "https://img3.doubanio.com/lpic/s6989253.jpg"
+//                 ],
     export default {
         props:['imgs'],
-        data() {
+        data(){
             return {
                 idx:0
             }
         },
+        created() {
+            setInterval(() => {
+                this.idx++;
+                if(this.idx == this.imgs.length ){
+                    this.idx = 0;
+                }
+            }, 5000);
 
+        },
     }
 </script>
 
-<style scope>
+<style scoped>
     .slide-box{
         position: relative;
+        overflow: hidden;
+        height:9.4rem;
     }
     .slide-item{
         position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 4rem;
+        left:0px;
+        top:0px;
+        width:100%;
+        height:9.4rem;
+        /* display: none; */
     }
     /* .slide-item:first-child{
-        z-index: 2;
+        z-index:2;
     } */
-    /* .slide-item:first-child{
+    .slide-item:first-child{
         display: block;
-    } */
-    .slide-item img{
-        width: 100%;
-        height: 100%;
     }
 
+    .slide-item img{
+        width:100%  ;
+        height:100%;
+    }
 
+    /* 过度的动画  */
+    .fade-enter{
+        transform: translateX(-100%);
+    }
+    .fade-enter-active{
+        transition:transform 5s;
+    }
+    .fade-enter-to{
+        transform: translateX(0);
+    }
+    .fade-leave{
+        transform: translateX(0);
+    }
+    .fade-leave-active{
+        transition:transform 5s;
+    }
+    .fade-leave-to{
+        transform: translateX(100%);
+    }
+    
 </style>
